@@ -8,7 +8,15 @@
 </head>
 <%@include file="../../include/header.jsp"%>
 <div class="content-wrapper">
-
+	<section class="content-header" >
+	<h1>Q & A</h1>
+	<ol class="breadcrumb">
+		<li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+		<li class="subPage active">Q&A</li>
+	</ol>
+	</section>
+	<section class="content"> 
+	</section>
 </div>
 <%@include file="../../include/footer.jsp"%>
 </html>

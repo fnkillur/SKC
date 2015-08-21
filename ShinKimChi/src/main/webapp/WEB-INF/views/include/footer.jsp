@@ -97,7 +97,7 @@
 			    }else if(targetval == 'store'){
 			        location.href="/mentee/list";
 			    }else if(targetval == 'reply'){
-			        location.href="/contents/contentsListCri";
+			        location.href="/admin/skc/";
 			    }
 			});
 			
@@ -114,8 +114,8 @@
 				$('.mentoPage').addClass("active");
 			}else if($('.content-header h1').text() == "Mentee"){
 				$('.menteePage').addClass("active");
-			}else if($('.content-header h1').text() == "Contents"){
-				$('.contents').addClass("active");
+			}else if($('.content-header h1').text() == "Reply"){
+				$('.reply').addClass("active");
 			}
 			
 			

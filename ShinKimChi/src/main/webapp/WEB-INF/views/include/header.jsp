@@ -75,9 +75,9 @@
 					<li class="notice"><a href="notice"><i class='fa fa-link'></i>
 							<span>Notice</span></a></li>
 					<li class="qna"><a href="qna"><i class='fa fa-link'></i> <span>Q&A</span></a></li>
-					<li class="mentoPage"><a href="coupon"><i class='fa fa-link'></i><span>Coupon</span></a></li>
-					<li class="menteePage"><a href="store"><i class='fa fa-link'></i><span>Store</span></a></li>
-					<li class="contents"><a href="reply"><i class='fa fa-link'></i> <span>Reply</span></a></li>
+					<li class="coupon"><a href="coupon"><i class='fa fa-link'></i><span>Coupon</span></a></li>
+					<li class="store"><a href="store"><i class='fa fa-link'></i><span>Store</span></a></li>
+					<li class="reply"><a href="reply"><i class='fa fa-link'></i> <span>Reply</span></a></li>
 				</ul>
 				<!-- /.sidebar-menu -->
 			</section>
