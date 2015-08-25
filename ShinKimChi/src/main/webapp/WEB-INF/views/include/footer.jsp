@@ -91,13 +91,13 @@
 			    if(targetval == 'notice'){
 			    	self.location = "/notice/list";
 			    }else if(targetval == 'qna') {
-			    	self.location = "/qna/list";
+			    	self.location = "/admin/skc/qna/list";
 			    }else if(targetval == 'coupon'){
 			        location.href="/mento/list";
 			    }else if(targetval == 'store'){
 			        location.href="/mentee/list";
-			    }else if(targetval == 'reply'){
-			        location.href="/admin/skc/";
+			    }else if(targetval == 'review'){
+			        location.href="/admin/skc/review/list";
 			    }
 			});
 			
@@ -114,8 +114,8 @@
 				$('.mentoPage').addClass("active");
 			}else if($('.content-header h1').text() == "Mentee"){
 				$('.menteePage').addClass("active");
-			}else if($('.content-header h1').text() == "Reply"){
-				$('.reply').addClass("active");
+			}else if($('.content-header h1').text() == "Review"){
+				$('.review').addClass("active");
 			}
 			
 			
