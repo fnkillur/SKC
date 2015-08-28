@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html>
 <html>
 	<footer class="main-footer"> <!-- To the right -->
 	<div class="pull-right hidden-xs">Anything you want</div>
@@ -89,13 +89,13 @@
 			    event.preventDefault();
 			    var targetval = $(this).attr('href');
 			    if(targetval == 'notice'){
-			    	self.location = "/notice/list";
+			    	 location.href = "/admin/skc/notice/list";
 			    }else if(targetval == 'qna') {
 			    	self.location = "/qna/list";
 			    }else if(targetval == 'coupon'){
-			        location.href="/mento/list";
+			        location.href="/admin/skc/coupon/list";
 			    }else if(targetval == 'store'){
-			        location.href="/mentee/list";
+			        location.href="/admin/skc/store/list";
 			    }else if(targetval == 'reply'){
 			        location.href="/contents/contentsListCri";
 			    }

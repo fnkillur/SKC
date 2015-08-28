@@ -27,10 +27,9 @@
 	</bean>
 	
 	<!-- Mapper 인터페이스를 스프링에 인식시키기 해당 패키지에 있는 Mapper 인터페이스나 XML을 찾도록 합니다. -->
-	<mybatis-spring:scan base-package = "org.skc.mapper"/> 
+	<mybatis-spring:scan base-package = "org.skc.mapper"/>
 		
-	<!-- 서비스계층을 스프링에서 인식하기 위해서는 component-scan 설정을 추가해야한다. org.hotsix.service 패키지를 스캐닝해서
-	필요한 객체들을 스프링의 빈으로 인식하게 하라는 뜻입니다.-->
+	<!-- 서비스계층을 스프링에서 인식하기 위해서는 component-scan 설정을 추가해야한다.-->
 	<context:component-scan base-package="org.skc.*"/>
 		
 </beans>

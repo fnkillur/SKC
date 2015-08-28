@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="org.skc.mapper.StoreMapper">
+
+<sql id="searchSQL">
+<if test="searchType != null">
+	<if test="searchType eq 'm'.toString()">
+	and st_name like CONCAT('%', #{keyword}, '%')
+	</if>
+	<if test="searchType eq 't'.toString()">
+	and st_tel like CONCAT('%', #{keyword}, '%')
+	</if>
+	<if test="searchType eq 's'.toString()">
+	and st_type like CONCAT('%', #{keyword}, '%')
+	</if>
+	<if test="searchType eq 'a'.toString()">
+	and st_addr like CONCAT('%', #{keyword}, '%')
+	</if>
+	<if test="searchType eq 'i'.toString()">
+	and id like CONCAT('%', #{keyword}, '%')
+	</if>
+	
+</if>	
+</sql>
+
+<sql id="orderSQL">
+<if test="sortType != null">
+	<if test="sortType eq 't'.toString()">
+	order by st_type, st_state
+	</if>
+	<if test="sortType eq 'a'.toString()">
+	order by st_addr, st_state
+	</if>
+	<if test="sortType eq 's'.toString()">
+	order by st_state
+	</if>
+</if>	
+<if test="sortType == null">
+order by st_date 
+</if>
+</sql>
+
+<sql id="stateSQL">
+<if test="btnType != null">
+	<if test="btnType eq 'okBtn'.toString()">
+	set st_state = 1 
+	</if>
+	<if test="btnType eq 'noBtn'.toString()">
+	set st_state = 0 
+	</if>
+</if>
+</sql>
+
+<select id="listAll" resultType="org.skc.admin.store.StoreVO">
+	select * from tbl_store 
+	where st_tel>0   
+	<include refid="searchSQL" />
+	<include refid="orderSQL" /> 
+	limit #{pageStart}, #{perPageNum}
+</select>
+
+<select id="countPaging" resultType="org.skc.page.PageMaker">
+	select count(st_tel) totalCount 
+	from tbl_store 
+	where st_tel>0 
+	<include refid="searchSQL" />
+</select>
+
+<update id="changeState">
+	update tbl_store
+	<include refid="stateSQL" />
+	where st_tel=#{st_tel}
+</update>
+
+</mapper>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="org.skc.mapper.CouponMapper">
+
+<sql id="searchSQL">
+<if test="searchType != null">
+	<if test="searchType eq 'm'.toString()">
+	and st_name like CONCAT('%', #{keyword}, '%')
+	</if>
+	<if test="searchType eq 'i'.toString()">
+	and tbl_coupon.id like CONCAT('%', #{keyword}, '%')
+	</if>
+</if>	
+</sql>
+
+<sql id="orderSQL">
+<if test="sortType != null">
+	<if test="sortType eq 'n'.toString()">
+	order by st_name, cp_state
+	</if>
+	<if test="sortType eq 'i'.toString()">
+	order by id, cp_state
+	</if>
+	<if test="sortType eq 's'.toString()">
+	order by cp_state
+	</if>
+</if>	
+<if test="sortType == null">
+order by cp_seq desc
+</if>
+</sql>
+
+<select id="listAll" resultType="org.skc.admin.coupon.CouponVO">
+	select cp_seq, st_tel, tbl_coupon.id id, cp_num, cp_startdate, cp_enddate, cp_state, st_name 
+	from tbl_coupon 
+	join tbl_store using(st_tel) 
+	where cp_seq>0 
+	<include refid="searchSQL" />
+	<include refid="orderSQL" />
+	limit #{pageStart}, #{perPageNum}
+</select>
+
+<select id="countPaging" resultType="org.skc.page.PageMaker">
+	select count(cp_seq) totalCount 
+	from tbl_coupon 
+	join tbl_store using(st_tel) 
+	where cp_seq>0 
+	<include refid="searchSQL" />
+</select>
+
+<update id="changeState">
+	update tbl_coupon 
+	set cp_state=1 
+	where cp_seq=#{cp_seq}
+</update>
+
+</mapper>
