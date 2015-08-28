@@ -4,9 +4,8 @@ import javax.inject.Inject;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.skc.mapper.QnAMapper;
 import org.skc.mapper.ReviewMapper;
-import org.skc.page.PageMaker;
-import org.skc.page.PagingCriteria;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.test.context.ContextConfiguration;
@@ -20,12 +19,12 @@ public class MapperTest {
 	
 	@Inject
 	private ReviewMapper reMapper;
-	PageMaker pm = new PageMaker();
-	PagingCriteria cri = new PagingCriteria();
+	
+	@Inject
+	private QnAMapper qnaMapper;
 	
 	@Test
 	public void testTime(){
-		reMapper.listCount().calcPage(cri);
-		logger.info(pm.toString());
+		logger.info(qnaMapper.searchList().toString());
 	}
 }

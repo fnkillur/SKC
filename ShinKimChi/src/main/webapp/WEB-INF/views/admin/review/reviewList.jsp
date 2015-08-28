@@ -69,6 +69,7 @@
 	var listView = function(){
 		pagingCall();
 		var data = $('#jobForm').serialize();
+		console.log(data);
 		$.get("/admin/skc/review/reviewList", data, function(data){
 			console.log("들어어어");
 			var str = '';
@@ -144,6 +145,7 @@
 		console.log($(this).attr("href"));
 		$('#jobForm').find("[name='page']").val($(this).attr("href"));
 		listView();
+		
 	});
 	
 	
