@@ -7,6 +7,7 @@ public class PagingCriteria {
 	private int displayPageNum = 10;
 	private String searchType;
 	private String keyword;
+	private int nextPage;
 	
 	//Notice
 	private int no_seq;
@@ -87,11 +88,15 @@ public class PagingCriteria {
 	public void setCp_seq(int cp_seq) {
 		this.cp_seq = cp_seq;
 	}
-	
-	
 	public int getPageStart(){
 		
 		return (this.page -1)* perPageNum;
+	}
+	public int getNextPage() {
+		return nextPage;
+	}
+	public void setNextPage(int nextPage) {
+		this.nextPage = nextPage;
 	}
 	
 }

@@ -9,6 +9,8 @@
 <!-- Bootstrap 3.3.4 -->
 <link href="/resources/bootstrap/css/bootstrap.min.css" rel="stylesheet"
 	type="text/css" />
+	<link rel="stylesheet" type="text/css"
+	href="\resources\bootstrap\css\bootstrap.css" />
 <!-- Font Awesome Icons -->
 <link
 	href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"
@@ -75,9 +77,9 @@
 					<li class="notice"><a href="notice"><i class='fa fa-link'></i>
 							<span>Notice</span></a></li>
 					<li class="qna"><a href="qna"><i class='fa fa-link'></i> <span>Q&A</span></a></li>
-					<li class="mentoPage"><a href="coupon"><i class='fa fa-link'></i><span>Coupon</span></a></li>
-					<li class="menteePage"><a href="store"><i class='fa fa-link'></i><span>Store</span></a></li>
-					<li class="contents"><a href="reply"><i class='fa fa-link'></i> <span>Reply</span></a></li>
+					<li class="coupon"><a href="coupon"><i class='fa fa-link'></i><span>Coupon</span></a></li>
+					<li class="store"><a href="store"><i class='fa fa-link'></i><span>Store</span></a></li>
+					<li class="review"><a href="review"><i class='fa fa-link'></i> <span>Review</span></a></li>
 				</ul>
 				<!-- /.sidebar-menu -->
 			</section>

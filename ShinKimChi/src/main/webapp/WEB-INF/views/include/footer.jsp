@@ -91,13 +91,19 @@
 			    if(targetval == 'notice'){
 			    	 location.href = "/admin/skc/notice/list";
 			    }else if(targetval == 'qna') {
-			    	self.location = "/qna/list";
+			    	self.location = "/admin/skc/qna/list";
 			    }else if(targetval == 'coupon'){
 			        location.href="/admin/skc/coupon/list";
 			    }else if(targetval == 'store'){
+<<<<<<< HEAD
 			        location.href="/admin/skc/store/list";
 			    }else if(targetval == 'reply'){
 			        location.href="/contents/contentsListCri";
+=======
+			        location.href="/mentee/list";
+			    }else if(targetval == 'review'){
+			        location.href="/admin/skc/review/list";
+>>>>>>> branch 'master' of https://github.com/Shinhm/SKC.git
 			    }
 			});
 			
@@ -114,8 +120,8 @@
 				$('.mentoPage').addClass("active");
 			}else if($('.content-header h1').text() == "Mentee"){
 				$('.menteePage').addClass("active");
-			}else if($('.content-header h1').text() == "Contents"){
-				$('.contents').addClass("active");
+			}else if($('.content-header h1').text() == "Review"){
+				$('.review').addClass("active");
 			}
 			
 			
