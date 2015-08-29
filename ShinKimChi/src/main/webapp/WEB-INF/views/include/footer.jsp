@@ -91,19 +91,13 @@
 			    if(targetval == 'notice'){
 			    	 location.href = "/admin/skc/notice/list";
 			    }else if(targetval == 'qna') {
-			    	self.location = "/admin/skc/qna/list";
+			    	 location.href = "/admin/skc/qna/list";
 			    }else if(targetval == 'coupon'){
 			        location.href="/admin/skc/coupon/list";
 			    }else if(targetval == 'store'){
-<<<<<<< HEAD
-			        location.href="/admin/skc/store/list";
-			    }else if(targetval == 'reply'){
-			        location.href="/contents/contentsListCri";
-=======
-			        location.href="/mentee/list";
+			    	 location.href="/admin/skc/store/list";
 			    }else if(targetval == 'review'){
-			        location.href="/admin/skc/review/list";
->>>>>>> branch 'master' of https://github.com/Shinhm/SKC.git
+			    	location.href="/admin/skc/review/list";
 			    }
 			});
 			
