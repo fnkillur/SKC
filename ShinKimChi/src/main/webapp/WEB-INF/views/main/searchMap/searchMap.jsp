@@ -9,7 +9,7 @@
 <%@include file="../../include/mainheader.jsp" %>
 
 
-<div id="map" style="position: absolute; top: 50px; left: 0; width: 100%; height:870px; "></div>
+<div id="map" style="position: absolute; top: 80px; left: 0; width: 100%; height:840px; "></div>
 <script type="text/javascript" src="//apis.daum.net/maps/maps3.js?apikey=644dbae64161fdba65b07f4a65c961d3&libraries=services"></script>
 <script>
 	var x = "${lat}";

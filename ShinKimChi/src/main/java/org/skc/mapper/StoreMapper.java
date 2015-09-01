@@ -3,7 +3,6 @@ package org.skc.mapper;
 import java.util.List;
 
 import org.apache.ibatis.annotations.Delete;
-import org.apache.ibatis.annotations.Update;
 import org.skc.admin.store.StoreVO;
 import org.skc.page.PageMaker;
 import org.skc.page.PagingCriteria;

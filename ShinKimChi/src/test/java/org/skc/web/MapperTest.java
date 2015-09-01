@@ -4,8 +4,10 @@ import javax.inject.Inject;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.skc.mapper.LoginMapper;
 import org.skc.mapper.QnAMapper;
 import org.skc.mapper.ReviewMapper;
+import org.skc.member.SessionCookieVO;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.test.context.ContextConfiguration;
@@ -23,8 +25,15 @@ public class MapperTest {
 	@Inject
 	private QnAMapper qnaMapper;
 	
+	@Inject
+	private LoginMapper loMapper;
+	
 	@Test
 	public void testTime(){
-		logger.info(qnaMapper.searchList().toString());
+		SessionCookieVO scVO = new SessionCookieVO();
+		scVO.setCookie("cookie");
+		scVO.setRememberDate("2015.8.29");
+		System.out.println(loMapper.loginCookie(scVO));
+		
 	}
 }
