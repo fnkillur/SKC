@@ -20,6 +20,9 @@ public class PagingCriteria {
 	//coupon
 	private int cp_seq;
 	
+	//menu
+	private int me_seq;
+	
 	public String getSearchType() {
 		return searchType;
 	}
@@ -88,15 +91,20 @@ public class PagingCriteria {
 	public void setCp_seq(int cp_seq) {
 		this.cp_seq = cp_seq;
 	}
-	public int getPageStart(){
-		
-		return (this.page -1)* perPageNum;
-	}
 	public int getNextPage() {
 		return nextPage;
 	}
 	public void setNextPage(int nextPage) {
 		this.nextPage = nextPage;
 	}
-	
+	public int getMe_seq() {
+		return me_seq;
+	}
+	public void setMe_seq(int me_seq) {
+		this.me_seq = me_seq;
+	}
+	public int getPageStart(){
+		
+		return (this.page -1)* perPageNum;
+	}
 }

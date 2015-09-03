@@ -13,9 +13,10 @@ public class StoreVO {
 			st_y double(9,6) not null,
 			st_time varchar(50) not null,
 			st_type varchar(50) not null,
-			st_grade int default 0,
 			st_state int default 0,
-			st_date timestamp not null default now()
+			st_date timestamp not null default now(),
+			st_img varchar(200),
+			st_intro varchar(200)
 	);
 	*/
 	
@@ -27,9 +28,10 @@ public class StoreVO {
 	private double st_y;
 	private String st_type;
 	private String st_time;
-	private int st_grade;
 	private int st_state;
 	private Date st_date;
+	private String st_img;
+	private String st_intro;
 	
 	public String getId() {
 		return id;
@@ -73,12 +75,6 @@ public class StoreVO {
 	public void setSt_time(String st_time) {
 		this.st_time = st_time;
 	}
-	public int getSt_grade() {
-		return st_grade;
-	}
-	public void setSt_grade(int st_grade) {
-		this.st_grade = st_grade;
-	}
 	public int getSt_state() {
 		return st_state;
 	}
@@ -96,6 +92,18 @@ public class StoreVO {
 	}
 	public void setSt_type(String st_type) {
 		this.st_type = st_type;
+	}
+	public String getSt_img() {
+		return st_img;
+	}
+	public void setSt_img(String st_img) {
+		this.st_img = st_img;
+	}
+	public String getSt_intro() {
+		return st_intro;
+	}
+	public void setSt_intro(String st_intro) {
+		this.st_intro = st_intro;
 	}
 	
 	

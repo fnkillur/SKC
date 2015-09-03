@@ -7,12 +7,12 @@ import org.skc.page.PagingCriteria;
 
 public interface StoreService {
 
-	public List<StoreVO> listAll(PagingCriteria cri)throws Exception;
+	public List<StoreVO> listAll(PagingCriteria cri);
 
-	public PageMaker countPaging(PagingCriteria cri)throws Exception;
+	public PageMaker countPaging(PagingCriteria cri);
 
-	public void changeState(PagingCriteria cri)throws Exception;
+	public void changeState(PagingCriteria cri);
 
-	public void deleteStore(PagingCriteria cri)throws Exception;
+	public void deleteStore(PagingCriteria cri);
 
 }

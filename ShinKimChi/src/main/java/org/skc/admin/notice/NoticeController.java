@@ -25,7 +25,7 @@ public class NoticeController {
 	private NoticeService service;
 	
 	@RequestMapping(value="/list", method=RequestMethod.GET)
-	public String list(@ModelAttribute("cri")PagingCriteria cri) throws Exception{
+	public String list(@ModelAttribute("cri")PagingCriteria cri){
 		
 		logger.info("============= 공지사항 리스트 ==============="); 
 		
@@ -34,7 +34,7 @@ public class NoticeController {
 	
 	@RequestMapping(value="/ajaxList", method=RequestMethod.GET)
 	@ResponseBody
-	public List<NoticeVO> ajaxList(@ModelAttribute("cri")PagingCriteria cri) throws Exception{
+	public List<NoticeVO> ajaxList(@ModelAttribute("cri")PagingCriteria cri){
 		
 		logger.info("============= 공지사항 리스트 알맹이 ===============");
 		
@@ -43,7 +43,7 @@ public class NoticeController {
 	
 	@RequestMapping(value="/ajaxPaging", method=RequestMethod.GET)
 	@ResponseBody
-	public PageMaker ajaxPaging(@ModelAttribute("cri")PagingCriteria cri) throws Exception{
+	public PageMaker ajaxPaging(@ModelAttribute("cri")PagingCriteria cri){
 		
 		logger.info("============= 공지사항 리스트 페이징 ===============");
 		
@@ -51,7 +51,7 @@ public class NoticeController {
 	}
 			
 	@RequestMapping(value="/read", method=RequestMethod.GET)
-	public String readGet(@ModelAttribute("cri") PagingCriteria cri,Model model) throws Exception{
+	public String readGet(@ModelAttribute("cri") PagingCriteria cri,Model model){
 		
 		logger.info("============= 공지사항 글보기 ===============");
 		
@@ -62,7 +62,7 @@ public class NoticeController {
 	
 	@RequestMapping(value="/modify", method=RequestMethod.POST)
 	@ResponseBody
-	public NoticeVO modify(NoticeVO notice, Model model) throws Exception{
+	public NoticeVO modify(NoticeVO notice, Model model){
 		
 		logger.info("============= 공지사항 글수정 ===============");
 		
@@ -73,7 +73,7 @@ public class NoticeController {
 	
 	@RequestMapping(value="/delete", method=RequestMethod.POST)
 	@ResponseBody
-	public String delete(NoticeVO notice) throws Exception{
+	public String delete(NoticeVO notice){
 		
 		logger.info("============= 공지사항 글수정 ===============");
 		
@@ -83,7 +83,7 @@ public class NoticeController {
 	}
 	
 	@RequestMapping(value="/regist", method=RequestMethod.GET)
-	public String registGet() throws Exception{
+	public String registGet(){
 		
 		logger.info("============= 공지사항 등록 폼 ===============");
 				
@@ -91,7 +91,7 @@ public class NoticeController {
 	}
 	
 	@RequestMapping(value="/regist", method=RequestMethod.POST)
-	public String registPost(NoticeVO notice) throws Exception{
+	public String registPost(NoticeVO notice){
 		
 		logger.info("============= 공지사항 등록 처리 ===============");
 		

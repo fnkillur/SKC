@@ -7,11 +7,11 @@ import org.skc.page.PagingCriteria;
 
 public interface CouponService {
 
-	public List<CouponVO> listAll(PagingCriteria cri)throws Exception;
+	public List<CouponVO> listAll(PagingCriteria cri);
 
-	public PageMaker countPaging(PagingCriteria cri)throws Exception;
+	public PageMaker countPaging(PagingCriteria cri);
 
-	public void deleteCoupon(PagingCriteria cri)throws Exception;
+	public void deleteCoupon(PagingCriteria cri);
 
-	public void changeState(PagingCriteria cri)throws Exception;
+	public void changeState(PagingCriteria cri);
 }

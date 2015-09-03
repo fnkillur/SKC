@@ -16,25 +16,25 @@ public class StoreServiceImpl implements StoreService {
 	private StoreMapper mapper;
 	
 	@Override
-	public List<StoreVO> listAll(PagingCriteria cri)throws Exception{
+	public List<StoreVO> listAll(PagingCriteria cri){
 		
 		return mapper.listAll(cri);
 	}
 
 	@Override
-	public PageMaker countPaging(PagingCriteria cri)throws Exception {
+	public PageMaker countPaging(PagingCriteria cri){
 		
 		return mapper.countPaging(cri);
 	}
 
 	@Override
-	public void changeState(PagingCriteria cri) throws Exception {
+	public void changeState(PagingCriteria cri){
 		
 		mapper.changeState(cri);
 	}
 
 	@Override
-	public void deleteStore(PagingCriteria cri) throws Exception {
+	public void deleteStore(PagingCriteria cri){
 
 		mapper.deleteStroe(cri);
 	}

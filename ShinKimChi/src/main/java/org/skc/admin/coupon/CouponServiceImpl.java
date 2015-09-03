@@ -16,25 +16,25 @@ public class CouponServiceImpl implements CouponService {
 	private CouponMapper mapper;
 	
 	@Override
-	public List<CouponVO> listAll(PagingCriteria cri) throws Exception {
+	public List<CouponVO> listAll(PagingCriteria cri){
 	
 		return mapper.listAll(cri);
 	}
 
 	@Override
-	public PageMaker countPaging(PagingCriteria cri) throws Exception {
+	public PageMaker countPaging(PagingCriteria cri){
 
 		return mapper.countPaging(cri);
 	}
 
 	@Override
-	public void deleteCoupon(PagingCriteria cri) throws Exception {
+	public void deleteCoupon(PagingCriteria cri){
 		
 		mapper.deleteCoupon(cri);
 	}
 
 	@Override
-	public void changeState(PagingCriteria cri) throws Exception {
+	public void changeState(PagingCriteria cri){
 		
 		mapper.changeState(cri);
 	}

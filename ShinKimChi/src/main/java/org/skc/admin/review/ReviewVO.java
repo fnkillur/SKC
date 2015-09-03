@@ -4,12 +4,12 @@ public class ReviewVO {
 
 	private int re_seq;
 	private String id;
-	private String st_tel;
 	private String re_content;
 	private int re_grade;
 	private int re_state;
 	private int re_parent;
 	private int re_depth;
+	private int me_seq;
 	
 	public int getRe_seq() {
 		return re_seq;
@@ -22,12 +22,6 @@ public class ReviewVO {
 	}
 	public void setId(String id) {
 		this.id = id;
-	}
-	public String getSt_tel() {
-		return st_tel;
-	}
-	public void setSt_tel(String st_tel) {
-		this.st_tel = st_tel;
 	}
 	public String getRe_content() {
 		return re_content;
@@ -59,7 +53,12 @@ public class ReviewVO {
 	public void setRe_depth(int re_depth) {
 		this.re_depth = re_depth;
 	}
-	
+	public int getMe_seq() {
+		return me_seq;
+	}
+	public void setMe_seq(int me_seq) {
+		this.me_seq = me_seq;
+	}
 	
 	
 }

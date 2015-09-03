@@ -24,7 +24,7 @@ public class StoreController {
 	private StoreService service;
 	
 	@RequestMapping(value="/list", method=RequestMethod.GET)
-	public String list(@ModelAttribute("cri")PagingCriteria cri) throws Exception{
+	public String list(@ModelAttribute("cri")PagingCriteria cri){
 		
 		logger.info("============= 가게등록 리스트 ===============");
 		
@@ -33,7 +33,7 @@ public class StoreController {
 	
 	@RequestMapping(value="/ajaxList", method=RequestMethod.GET)
 	@ResponseBody
-	public List<StoreVO> ajaxList(@ModelAttribute("cri")PagingCriteria cri) throws Exception{
+	public List<StoreVO> ajaxList(@ModelAttribute("cri")PagingCriteria cri){
 		
 		logger.info("============= 가게등록 리스트 알맹이 ===============");
 		
@@ -42,7 +42,7 @@ public class StoreController {
 	
 	@RequestMapping(value="/ajaxPaging", method=RequestMethod.GET)
 	@ResponseBody
-	public PageMaker ajaxPaging(@ModelAttribute("cri")PagingCriteria cri) throws Exception{
+	public PageMaker ajaxPaging(@ModelAttribute("cri")PagingCriteria cri){
 		
 		logger.info("============= 가게등록 리스트 페이징 ===============");
 		
@@ -51,7 +51,7 @@ public class StoreController {
 	
 	@RequestMapping(value="/changeState", method=RequestMethod.POST)
 	@ResponseBody
-	public String changeState(@ModelAttribute("cri")PagingCriteria cri)throws Exception{
+	public String changeState(@ModelAttribute("cri")PagingCriteria cri){
 		
 		logger.info("============= 가게등록 상태처리 ===============");
 		
