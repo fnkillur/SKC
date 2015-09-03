@@ -95,9 +95,8 @@
 			    }else if(targetval == 'coupon'){
 			        location.href="/admin/skc/coupon/list";
 			    }else if(targetval == 'store'){
-			    	 location.href="/admin/skc/store/list";
+			        location.href="/admin/skc/store/list";
 			    }else if(targetval == 'review'){
-
 			        location.href="/admin/skc/review/list";
 			    }
 			});
