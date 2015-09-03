@@ -13,39 +13,49 @@
   	<script src='//codepen.io/assets/editor/live/css_live_reload_init.js'></script>
 	<script src='//assets.codepen.io/assets/common/stopExecutionOnTimeout.js?t=1'></script>
     <script src="http://s.codepen.io/assets/libs/modernizr.js" type="text/javascript"></script>
-    <script src="\resources\dist\js\hm\navigateScript.js" type="text/javascript"></script>
      
 	<link href="/resources/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
 	<link rel="stylesheet" type="text/css" href="/resources/bootstrap/css/bootstrap.css" />
 	<link href="/resources/dist/css/hm/navigatebar.css" rel="stylesheet" type="text/css">
 	<link rel="canonical" href="http://codepen.io/jasondavis/pen/IqsGm" />
 	<link rel="canonical" href="http://codepen.io/codyhouse/pen/pIrbg" />
-	<link href="\resources\dist\css\hm\logbar.css" rel="stylesheet">
+	<link href="/resources/dist/css/hm/logbar.css" rel="stylesheet">
     <link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="https://s3-us-west-2.amazonaws.com/s.cdpn.io/148866/reset.css">
     <link rel='stylesheet prefetch' href='//codepen.io/assets/reset/reset.css'>
-    <style>
-    </style></head>
+    </head>
     <body>
-    <% MemberVO vo = (MemberVO)session.getAttribute("sessionLogin"); %>
+    <% 
+    String user="user";
+    MemberVO vo = null;
+    if(session.getAttribute("sessionLogin") != null ){
+    	vo = (MemberVO)session.getAttribute("sessionLogin"); 
+    	user = "loginuser";
+    }
+    %>
 <header role="banner">
-    <a href="#0"><img style="position: absolute; width: 200px; left:0px; top:0px; height: 80px;" src="\resources\dist\img\main\SKC_logo.png" alt="Logo"></a>
+    <a href="#0"><img style="position: absolute; width: 200px; left:0px; top:0px; height: 80px;" src="/resources/dist/img/main/SKC_logo.png" alt="Logo"></a>
 
+        <c:set var="name" value="<%=user %>" />
+        <c:choose>
+        <c:when test="${name eq 'user'}">
     <nav class="main-nav">
-        <ul>
-        	<c:set var="name" value="HYUN" />
-        	<c:choose>
-        	<c:when test="${name eq 'HYUN'}">
-            	<li><a class="cd-signin" href="#0">Sign in</a></li>
-            	<li><a class="cd-signup" href="#0">Sign up</a></li>
-            </c:when>
-            <c:otherwise>
-            	<li><img style="height: 80px;" src="\resources\dist\img\profile\1432391023147-01.jpeg"></li>
-            	<li style="color: white;"></li>
-            </c:otherwise>
-            </c:choose>
-        </ul>
+        	<ul>
+           		<li><a class="cd-signin" href="#0">Sign in</a></li>
+           		<li><a class="cd-signup" href="#0">Sign up</a></li>
+           	</ul>
     </nav>
+        </c:when>
+        <c:otherwise>
+        	<nav class="login-nav pull-right">
+        		<ul>
+        			<li style=" width: 70px;"><img src="/resources/dist/img/profile/KakaoTalk_20150804_231614105.jpg"></li>
+	        		<li><a class="cd-Id" href="#0"><%=vo.getId() %></a></li>
+           			<li><a class="cd-Logout" href="#0">Logout</a></li>
+        		</ul>
+        	</nav>
+        </c:otherwise>
+        </c:choose>
 </header>
 
 <div class="cd-user-modal"> <!-- this is the entire modal form, including the background -->
@@ -59,14 +69,12 @@
             <form id="logForm" action="/skc/member/login" method="post" class="cd-form">
                 <p class="fieldset">
                     <label class="image-replace cd-email" for="signin-email">E-mail</label>
-                    <input class="full-width has-padding has-border" name="id" id="signin-email" type="email" placeholder="E-mail">
-                    <span class="cd-error-message">Error message here!</span>
+                    <input class="full-width has-padding has-border" name="id" id="signin-email" type="email" placeholder="E-mail" required="required">
                 </p>
 
                 <p class="fieldset">
                     <label class="image-replace cd-password" for="signin-password">Password</label>
-                    <input class="full-width has-padding has-border" name="pw" id="signin-password" type="password"  placeholder="Password">
-                    <span class="cd-error-message">Error message here!</span>
+                    <input class="full-width has-padding has-border" name="pw" id="signin-password" type="password"  placeholder="Password" required="required">
                 </p>
 
                 <p class="fieldset">
@@ -75,7 +83,7 @@
                 </p>
 
                 <p class="fieldset">
-                    <input id="loginBtn" class="full-width" type="submit" value="Login">
+                    <button class="full-width" type="submit">Login</button>
                 </p>
             </form>
 
@@ -87,26 +95,22 @@
             <form id="regForm" class="cd-form">
                 <p class="fieldset">
                     <label class="image-replace cd-username" for="signup-username">Username</label>
-                    <input class="full-width has-padding has-border" id="signup-username" type="text" placeholder="Username">
-                    <span class="cd-error-message">Error message here!</span>
+                    <input class="full-width has-padding has-border" id="signup-username" type="text" placeholder="Username" required="required">
                 </p>
                 
                 <p class="fieldset">
                     <label class="image-replace cd-username" for="signup-username">Nickname</label>
-                    <input class="full-width has-padding has-border" id="signup-username" type="text" placeholder="Nickname">
-                    <span class="cd-error-message">Error message here!</span>
+                    <input class="full-width has-padding has-border" id="signup-username" type="text" placeholder="Nickname" required="required">
                 </p>
 
                 <p class="fieldset">
                     <label class="image-replace cd-email" for="signup-email">E-mail</label>
-                    <input class="full-width has-padding has-border" id="signup-email" type="email" placeholder="E-mail">
-                    <span class="cd-error-message">Error message here!</span>
+                    <input class="full-width has-padding has-border" id="signup-email" type="email" placeholder="E-mail" required="required">
                 </p>
 
                 <p class="fieldset">
                     <label class="image-replace cd-password" for="signup-password">Password</label>
-                    <input class="full-width has-padding has-border" id="signup-password" type="password"  placeholder="Password">
-                    <span class="cd-error-message">Error message here!</span>
+                    <input class="full-width has-padding has-border" id="signup-password" type="password"  placeholder="Password" required="required">
                 </p>
 
                 <p class="fieldset">
@@ -115,7 +119,7 @@
                 </p>
 
                 <p class="fieldset">
-                    <input class="full-width has-padding" id="regBtn" type="submit" value="Create account">
+                    <button class="full-width has-padding" id="regBtn" type="submit">Create account</button>
                 </p>
             </form>
 
@@ -145,11 +149,16 @@
 </body>
 <script src='//assets.codepen.io/assets/common/stopExecutionOnTimeout.js?t=1'></script>
 <script>
-    $('#loginBtn').on("click", function(e){
-    	e.preventDefault();
-    	$('#logForm').submit();
-    	console.log("dasdasd");
-    });
+	$('.cd-signin').on("click", function(e){
+		e.preventDefault();
+		console.log("login btn click");
+	});
+	
+	$('.cd-Logout').on("click", function(e){
+		e.preventDefault();
+		location.href="/skc/member/logout";
+	});
+
 </script>
 <script src='//codepen.io/assets/editor/live/css_live_reload_init.js'></script>
 </html>

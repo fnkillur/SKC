@@ -10,7 +10,7 @@
 <link href="/resources/bootstrap/css/bootstrap.min.css" rel="stylesheet"
 	type="text/css" />
 	<link rel="stylesheet" type="text/css"
-	href="\resources\bootstrap\css\bootstrap.css" />
+	href="/resources/bootstrap/css/bootstrap.css" />
 <!-- Font Awesome Icons -->
 <link
 	href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"
@@ -61,7 +61,7 @@
 				<!-- Sidebar user panel (optional) -->
 				<div class="user-panel">
 					<div class="pull-left image">
-						<img src="\resources\dist\img\profile\KakaoTalk_20150804_231614105.jpg"
+						<img src="/resources/dist/img/profile/KakaoTalk_20150804_231614105.jpg"
 							class="img-circle" alt="User Image" />
 					</div>
 					<div class="pull-left info">

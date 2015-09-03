@@ -105,6 +105,10 @@ Primary style
         border-top: 1px solid #3b3d4b;
         color: #FFF;
     }
+    
+    
+    
+    
     @media only screen and (min-width: 768px) {
         .main-nav {
             width: auto;
@@ -151,6 +155,59 @@ Primary style
             background: #2f889a;
             border: none;
         }
+        
+        /* login nav */
+        
+        .login-nav {
+            width: auto;
+            height: auto;
+            background: none;
+            cursor: auto;
+            margin-right: 50px;
+        }
+        .login-nav ul {
+            position: static;
+            width: auto;
+            -webkit-transform: translateY(0);
+            -moz-transform: translateY(0);
+            -ms-transform: translateY(0);
+            -o-transform: translateY(0);
+            transform: translateY(0);
+            line-height: 80px;
+        }
+        .login-nav ul.is-visible {
+            -webkit-transform: translateY(0);
+            -moz-transform: translateY(0);
+            -ms-transform: translateY(0);
+            -o-transform: translateY(0);
+            transform: translateY(0);
+        }
+        .login-nav li {
+            display: inline-block;
+            margin-left: 1em;
+        }
+        .login-nav li:nth-last-child(2) {
+            margin-left: 2em;
+        }
+        .login-nav a {
+            display: inline-block;
+            height: auto;
+            line-height: normal;
+            background: transparent;
+        }
+        .login-nav a.cd-Id, .login-nav a.cd-Logout {
+            padding: .6em 1em;
+            border: 2px solid rgba(255, 255, 255, 0.6);
+            border-radius: 50em;
+           	vertical-align: bottom;
+           	margin-bottom: 15px;
+           	color: white;
+        }
+        .login-nav a.cd-Logout {
+            background: #2f889a;
+            border: none;
+        }
+        
     }
 
     /* --------------------------------
@@ -303,6 +360,9 @@ Primary style
     .cd-form input.full-width {
         width: 100%;
     }
+    .cd-form button.full-width {
+        width: 100%;
+    }
     .cd-form input.has-padding {
         padding: 12px 20px 12px 50px;
     }
@@ -326,7 +386,7 @@ Primary style
         /* space left for the HIDE button */
         padding-right: 65px;
     }
-    .cd-form input[type=submit] {
+    .cd-form button[type=submit] {
         padding: 16px 0;
         cursor: pointer;
         background: #2f889a;
@@ -339,7 +399,7 @@ Primary style
         -o-appearance: none;
         appearance: none;
     }
-    .no-touch .cd-form input[type=submit]:hover, .no-touch .cd-form input[type=submit]:focus {
+    .no-touch .cd-form button[type=submit]:hover, .no-touch .cd-form button[type=submit]:focus {
         background: #3599ae;
         outline: none;
     }
@@ -413,10 +473,10 @@ Primary style
         .cd-form .fieldset:last-child {
             margin-bottom: 0;
         }
-        .cd-form input.has-padding {
+        .cd-form button.has-padding {
             padding: 16px 20px 16px 50px;
         }
-        .cd-form input[type=submit] {
+        .cd-form button[type=submit] {
             padding: 16px 0;
         }
     }

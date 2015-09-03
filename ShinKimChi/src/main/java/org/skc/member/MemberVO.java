@@ -7,6 +7,7 @@ public class MemberVO {
 	public String name;
 	public String nick;
 	public int aut;
+	
 	public String getId() {
 		return id;
 	}

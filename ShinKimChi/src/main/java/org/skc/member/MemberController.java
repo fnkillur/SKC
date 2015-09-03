@@ -48,7 +48,6 @@ public class MemberController {
 			System.out.println(cookie);
 			String date = String.valueOf(cal.get(Calendar.YEAR))+"."+String.valueOf(cal.get ( Calendar.MONTH ) + 1)+"."+String.valueOf(cal.get ( Calendar.DATE ));
 			if(rememberMe != null){
-				System.out.println("rememberMe Checked");
 				String uuid = UUID.randomUUID().toString();
 				if(mMapper.loginView(id, pw) == 1){
 					System.out.println("id, pw ok");
@@ -81,9 +80,7 @@ public class MemberController {
 			}else{
 				System.out.println("rememberMe Not Checked");
 				if(mMapper.loginView(id, pw) == 1){
-					SessionCookieVO scVO = new SessionCookieVO();
-					scVO.setSession(id);
-					session.setAttribute("sessionLogin", mMapper.selectSession(loMapper.loginCookie(scVO)));
+					session.setAttribute("sessionLogin", mMapper.selectSession(id));
 				}else{
 					System.out.println("아이디랑 비번이 틀렸어");
 				}
@@ -91,6 +88,25 @@ public class MemberController {
 				return "redirect:/skc/main/mainPage/main";
 			}
 			
+		}
+		
+		@RequestMapping("logout")
+		public String logoutPage(HttpServletRequest request, HttpServletResponse response){
+			Cookie ck = WebUtils.getCookie(request, "loginId");
+			if(ck != null){
+				Cookie cookie2 = new Cookie("loginId", "nocookie");
+				cookie2.setMaxAge(0);
+				cookie2.setPath("/");
+				response.addCookie(cookie2);
+			}
+			session.invalidate();
+			return "redirect:/skc/main/mainPage/main";
+		}
+		
+		@RequestMapping("regist")
+		public String registPage(MemberVO vo){
+			mMapper.registMember(vo);
+			return "redirect:/skc/main/mainPage/main";
 		}
 
 }
