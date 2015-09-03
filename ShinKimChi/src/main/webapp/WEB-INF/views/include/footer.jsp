@@ -97,7 +97,8 @@
 			    }else if(targetval == 'store'){
 			    	 location.href="/admin/skc/store/list";
 			    }else if(targetval == 'review'){
-			    	location.href="/admin/skc/review/list";
+
+			        location.href="/admin/skc/review/list";
 			    }
 			});
 			
