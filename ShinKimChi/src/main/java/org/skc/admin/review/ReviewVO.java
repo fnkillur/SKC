@@ -10,6 +10,9 @@ public class ReviewVO {
 	private int re_parent;
 	private int re_depth;
 	private int me_seq;
+
+	private String st_name;
+	private String me_name;
 	
 	public int getRe_seq() {
 		return re_seq;
@@ -58,6 +61,26 @@ public class ReviewVO {
 	}
 	public void setMe_seq(int me_seq) {
 		this.me_seq = me_seq;
+	}
+	public String getSt_name() {
+		return st_name;
+	}
+	public void setSt_name(String st_name) {
+		this.st_name = st_name;
+	}
+	public String getMe_name() {
+		return me_name;
+	}
+	public void setMe_name(String me_name) {
+		this.me_name = me_name;
+	}
+	@Override
+	public String toString() {
+		return "ReviewVO [re_seq=" + re_seq + ", id=" + id + ", re_content="
+				+ re_content + ", re_grade=" + re_grade + ", re_state="
+				+ re_state + ", re_parent=" + re_parent + ", re_depth="
+				+ re_depth + ", me_seq=" + me_seq + ", st_name=" + st_name
+				+ ", me_name=" + me_name + "]";
 	}
 	
 	

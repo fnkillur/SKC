@@ -43,7 +43,7 @@
 		<!-- /.box-header -->
 
 		<div class="box-body">
-			<table class="table table-bordered">
+			<table class="table table-bordered table-hover">
 				<tr>
 					<th style="width: 40px"># </th>
 					<th>제목</th>

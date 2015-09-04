@@ -255,6 +255,7 @@ a.rm-viewdetails:before{
 	pointer-events: none;
 	-webkit-transform: translateZ(1000px);
 	transform: translateZ(1000px);
+	overflow: auto;
 }
 
 .rm-modal h5 {
