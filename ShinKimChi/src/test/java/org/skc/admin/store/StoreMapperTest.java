@@ -1,13 +1,10 @@
 package org.skc.admin.store;
 
-import java.util.List;
-
 import javax.inject.Inject;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.skc.admin.store.StoreController;
-import org.skc.admin.store.StoreVO;
 import org.skc.mapper.StoreMapper;
 import org.skc.page.PagingCriteria;
 import org.slf4j.Logger;

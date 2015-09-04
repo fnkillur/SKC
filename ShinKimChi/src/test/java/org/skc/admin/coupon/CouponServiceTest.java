@@ -6,9 +6,6 @@ import javax.inject.Inject;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.skc.admin.store.StoreController;
-import org.skc.admin.store.StoreService;
-import org.skc.admin.store.StoreVO;
 import org.skc.page.PagingCriteria;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

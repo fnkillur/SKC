@@ -22,7 +22,7 @@ public class StoreVO {
 	
 	private String id;
 	private String st_name;
-	private String st_tel;
+	private int st_tel;
 	private String st_addr;
 	private double st_x;
 	private double st_y;
@@ -45,10 +45,11 @@ public class StoreVO {
 	public void setSt_name(String st_name) {
 		this.st_name = st_name;
 	}
-	public String getSt_tel() {
+	
+	public int getSt_tel() {
 		return st_tel;
 	}
-	public void setSt_tel(String st_tel) {
+	public void setSt_tel(int st_tel) {
 		this.st_tel = st_tel;
 	}
 	public String getSt_addr() {
@@ -104,6 +105,15 @@ public class StoreVO {
 	}
 	public void setSt_intro(String st_intro) {
 		this.st_intro = st_intro;
+	}
+	
+	@Override
+	public String toString() {
+		return "StoreVO [id=" + id + ", st_name=" + st_name + ", st_tel="
+				+ st_tel + ", st_addr=" + st_addr + ", st_x=" + st_x
+				+ ", st_y=" + st_y + ", st_type=" + st_type + ", st_time="
+				+ st_time + ", st_state=" + st_state + ", st_date=" + st_date
+				+ "]";
 	}
 	
 	
