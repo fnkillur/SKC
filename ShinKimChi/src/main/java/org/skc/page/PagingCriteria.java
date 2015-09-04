@@ -23,6 +23,9 @@ public class PagingCriteria {
 	//menu
 	private int me_seq;
 	
+	//myPage
+	private String id;
+	
 	public String getSearchType() {
 		return searchType;
 	}
@@ -102,6 +105,12 @@ public class PagingCriteria {
 	}
 	public void setMe_seq(int me_seq) {
 		this.me_seq = me_seq;
+	}
+	public String getId() {
+		return id;
+	}
+	public void setId(String id) {
+		this.id = id;
 	}
 	public int getPageStart(){
 		

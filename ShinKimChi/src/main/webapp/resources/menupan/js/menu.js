@@ -57,7 +57,7 @@ var Menu = (function() {
 
 			$("#jobForm").find("input[name='me_seq']").val(me_seq);
 			
-			var $modal = $( '<div class="rm-modal"><div class="rm-thumb" style="background-image: url(' + img + ')"></div><h5>' + title + '</h5><div style="height:80px"><br><br><button class="rm-btn" id="writeReview">리뷰 쓰기</button></div><br><tbody><div class="taeng"></div><table class="review_table"></table><div><ul class="modalpaging pagination pagination-sm pull-right"></ul></div></tbody><br><span class="rm-close-modal">x</span></div>' );
+			var $modal = $( '<div class="rm-modal"><div class="rm-thumb" style="background-image: url(' + img + ')"></div><h5>' + title + '</h5><div style="height:80px"><br><br><button class="rm-btn" id="writeReview">리뷰 쓰기</button></div><br><tbody><div class="taeng"></div><table class="table table-hover table-bordered"></table><div><ul class="modalpaging pagination pagination-sm pull-right"></ul></div></tbody><br><span class="rm-close-modal">x</span></div>' );
 
 			$modal.appendTo( $container );
 			
@@ -103,8 +103,10 @@ var getReview = function() {
 			str += '<td colspan="2">' + this.re_content + '</td>';
 			str += '</tr>';
 		});
-
-		$(".review_table").html(str);
+		
+		if(str == '')
+			str += '<div class="rm-order"><p><strong>등록된 리뷰가 없습니다!</strong><br><br>리뷰를 등록하고 쿠폰을 받아가세요!</p></div>';
+		$(".table").html(str);
 	});
 }
 
@@ -173,8 +175,16 @@ $("#rm-container").on("click", "#writeReview", function(event) {
 	str += '<div class="review_form">';
 	str += '<form id="upForm">';
 	str += '<input type="hidden" name="me_seq" value="'+me_seq+'">';
-	str += '<textarea name="re_content" rows="5" cols="65"></textarea><br><br>';
-	str += '점수를 0~5점 까지 입력해주세요 : <input type="text" name="re_grade" size="5">';
+	str += '<textarea style="border:0; resize: none; width:100%;" name="re_content" rows="5" cols="65"></textarea><br><br>';
+	str += '<strong>점수를 0~5점 까지 입력해주세요 : </strong>';
+	str += '<select style="width:15%; text-align:center;" name="re_grade>';
+	
+	for(var i = 6; i>0; i--){
+		str += '<option value="'+i+'"><strong>'+i+'점</strong></option>';	
+	}
+	
+	str += '</select>';
+	
 	str += '<button type="button" class="rm-btn" id="cancelBtn">취소</button>';
 	str += '</form>';
 	str += '</div><br><br>';
