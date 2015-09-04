@@ -7,7 +7,7 @@ import org.skc.member.MemberVO;
 
 public interface MemberMapper {
 
-	@Select("select count(*) from tbl_member where id=#{id} or pw=#{pw}")
+	@Select("select count(*) from tbl_member where id=#{id} and pw=#{pw}")
 	public int loginView(@Param("id") String id, @Param("pw") String pw);
 	
 	

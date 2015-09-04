@@ -79,6 +79,7 @@ public class MemberController {
 				return "redirect:/skc/main/mainPage/main";
 			}else{
 				System.out.println("rememberMe Not Checked");
+				System.out.println("ID : "+ id+" PW : "+pw);
 				if(mMapper.loginView(id, pw) == 1){
 					session.setAttribute("sessionLogin", mMapper.selectSession(id));
 				}else{
@@ -103,7 +104,7 @@ public class MemberController {
 			return "redirect:/skc/main/mainPage/main";
 		}
 		
-		@RequestMapping("regist")
+		@RequestMapping(value="regist", method=RequestMethod.POST)
 		public String registPage(MemberVO vo){
 			mMapper.registMember(vo);
 			return "redirect:/skc/main/mainPage/main";

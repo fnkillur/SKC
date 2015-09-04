@@ -48,7 +48,7 @@ Primary style
     header[role=banner] {
         position: relative;
         height: 50px;
-        background: #343642;
+        background: #00C6ED;
     }
     header[role=banner]::after {
         /* clearfix */
@@ -199,7 +199,6 @@ Primary style
             padding: .6em 1em;
             border: 2px solid rgba(255, 255, 255, 0.6);
             border-radius: 50em;
-           	vertical-align: bottom;
            	margin-bottom: 15px;
            	color: white;
         }

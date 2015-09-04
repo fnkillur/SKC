@@ -49,7 +49,6 @@
         <c:otherwise>
         	<nav class="login-nav pull-right">
         		<ul>
-        			<li style=" width: 70px;"><img src="/resources/dist/img/profile/KakaoTalk_20150804_231614105.jpg"></li>
 	        		<li><a class="cd-Id" href="#0"><%=vo.getId() %></a></li>
            			<li><a class="cd-Logout" href="#0">Logout</a></li>
         		</ul>
@@ -92,26 +91,27 @@
         </div> <!-- cd-login -->
 
         <div id="cd-signup"> <!-- sign up form -->
-            <form id="regForm" class="cd-form">
+            <form id="regForm" action="/skc/member/regist" method="post" class="cd-form">
                 <p class="fieldset">
                     <label class="image-replace cd-username" for="signup-username">Username</label>
-                    <input class="full-width has-padding has-border" id="signup-username" type="text" placeholder="Username" required="required">
+                    <input class="full-width has-padding has-border" name="name" id="signup-username" type="text" placeholder="Username" required="required">
                 </p>
                 
                 <p class="fieldset">
                     <label class="image-replace cd-username" for="signup-username">Nickname</label>
-                    <input class="full-width has-padding has-border" id="signup-username" type="text" placeholder="Nickname" required="required">
+                    <input class="full-width has-padding has-border" name="nick" id="signup-username" type="text" placeholder="Nickname" required="required">
                 </p>
 
                 <p class="fieldset">
                     <label class="image-replace cd-email" for="signup-email">E-mail</label>
-                    <input class="full-width has-padding has-border" id="signup-email" type="email" placeholder="E-mail" required="required">
+                    <input class="full-width has-padding has-border" name="id" id="signup-email" type="email" placeholder="E-mail" required="required">
                 </p>
 
                 <p class="fieldset">
                     <label class="image-replace cd-password" for="signup-password">Password</label>
-                    <input class="full-width has-padding has-border" id="signup-password" type="password"  placeholder="Password" required="required">
+                    <input class="full-width has-padding has-border" name="pw" id="signup-password" type="password"  placeholder="Password" required="required">
                 </p>
+                <input class="full-width has-padding has-border" name="aut" value="1" id="signup-password" type="hidden"  placeholder="Password" required="required">
 
                 <p class="fieldset">
                     <input type="checkbox" id="accept-terms">

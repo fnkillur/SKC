@@ -38,6 +38,10 @@ public class MemberVO {
 	public void setAut(int aut) {
 		this.aut = aut;
 	}
-	
+	@Override
+	public String toString() {
+		return "MemberVO [id=" + id + ", pw=" + pw + ", name=" + name
+				+ ", nick=" + nick + ", aut=" + aut + "]";
+	}
 	
 }
